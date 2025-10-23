@@ -1,8 +1,15 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+}
+
 .dashboard{
     display:flex;
     flex-direction: column;
     width:100%;
     height:100%;
+    background-image: url(../src/assets/images/backgrounds/background-main.png);
 }
 
 .dashboard > header{

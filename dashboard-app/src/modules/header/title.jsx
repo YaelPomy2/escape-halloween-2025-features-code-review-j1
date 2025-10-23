@@ -1,9 +1,9 @@
 function DashboardHeaderTitle() {
 
   return (
-    <>
-      [Le titre principal du dashboard]  
-    </>
+    <div style={{display:"flex", justifyContent:"center", width:"100%"}}>
+      TABLEAU DE BORD HALLOWEEN 2025
+    </div>
   )
 }
 

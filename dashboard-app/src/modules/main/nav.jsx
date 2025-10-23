@@ -2,7 +2,7 @@ function DashboardMainNav() {
 
   return (
     <nav>
-      [Navigation entre les tabs]  
+      [Navigation entre les tabs] 
     </nav>
   )
 }

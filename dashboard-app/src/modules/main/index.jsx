@@ -1,12 +1,15 @@
 import DashboardMainNav from "./nav"
 import DashboardMainActiveTab from "./active-tab"
+import DashboardMainAnimationsTab from "./tabs/animations"
 
+import "./main.css"
 function DashboardMain() {
 
   return (
-    <main>
+    <main className="MainElementTab">
         <DashboardMainNav />
         <DashboardMainActiveTab />
+        <DashboardMainAnimationsTab />
     </main>
   )
 }

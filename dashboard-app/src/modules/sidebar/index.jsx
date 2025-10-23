@@ -3,7 +3,7 @@ import DashboardSidebarStoryline from "./storyline"
 function DashboardSidebar() {
 
   return (
-    <aside>
+    <aside style={{width:"30%"}}>
         <DashboardSidebarStoryline />
     </aside>
   )

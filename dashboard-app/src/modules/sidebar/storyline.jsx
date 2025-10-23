@@ -1,10 +1,11 @@
-function DashboardSidebarStoryline() {
+import "./storyline.css";
 
-  return (
-    <>
-      [Chemin de fer de l'histoire]  
-    </>
-  )
+function DashboardSidebarStoryline() {
+  return (<>
+    <div className="DashboardElementStoryframeCont">
+      <p style={{ display:"flex", flexFlow:"nowrap"}}> Trame de l'histoire </p>
+    </div>
+  </>)
 }
 
 export default DashboardSidebarStoryline

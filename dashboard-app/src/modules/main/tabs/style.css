@@ -1,0 +1,72 @@
+/*------------------------------------------------------
+                        Animation
+-------------------------------------------------------*/
+/*
+    DashboardMainAnimationsTab
+*/
+.AnimationTitles {
+    position: relative;
+    display: grid;
+
+    grid-template-columns:30fr 1fr 3fr;
+    grid-template-rows: 1fr;
+
+    padding-left: 3%;
+    
+    gap: 10%;
+}
+
+.AnimationList {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 28px;
+
+    width: 100%;
+    height: 100%;
+
+    
+    padding: 30px;
+
+    overflow: scroll;
+    box-sizing: border-box;
+}
+
+/*
+    SequenceItem
+*/
+
+.AnimationSequence {
+    display: flex;
+    flex-flow: row nowrap;
+
+    gap: 8%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.AnimationSequenceInfo {
+    display: flex;
+
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 58%;
+}
+.sequence {
+    display: flex;
+    justify-content: center;
+}
+
+.AnimationSequenceInfoTitle {
+    display: flex;
+    flex-flow: column wrap;
+
+    font-size: large;
+}
+
+.AnimationSequenceInfoDescr {
+    display: flex;
+
+    font-size: small;
+}
+/*------------------------------------------------------
+                        ANSWERS
+-------------------------------------------------------*/
