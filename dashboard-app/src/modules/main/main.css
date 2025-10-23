@@ -10,10 +10,22 @@
     */
 
     border-radius: 58px;
-    margin: 0px 10px 0 10px;
+    margin: 0px 8% 0 8%;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 .AnimationSequenceTitles {
     color: aqua;
+}
+
+/*
+    Nav.jsx
+*/
+.AnimationTable {
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: space-between;
+
+    padding: 0 15px ;
 }
