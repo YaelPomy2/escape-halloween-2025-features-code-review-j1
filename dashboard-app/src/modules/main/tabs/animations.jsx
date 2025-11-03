@@ -1,8 +1,15 @@
+//import React
 import { useState, useEffect } from "react";
+
+//import components
+
+//import assets
 import image from "/public/mocks/images/sequences/image.png";
+
+//import styles
 import "./style.css";
 
-function SequenceItem({ sequence, setActiveSequence }) {
+function SequenceItem1({ sequence, setActiveSequence }) {
   // Fonction du click sur la séquence
 
   function handleClick(e) {
@@ -11,37 +18,30 @@ function SequenceItem({ sequence, setActiveSequence }) {
   }
 
   return (<>
-    <div className="AnimationSequence" onClick={handleClick}>
-      <div>
-        <img alt="aperçu de séquence" src={image} style={{ height: "100%", width: "150px",paddingLeft:"30%" }} />
-      </div>
-
-      <div className="AnimationSequenceInfo sequence">
-        <div className="AnimationSequenceInfoTitle">
-          {sequence.title}
+    <div className="AnimationItem" onClick={handleClick}>
+      <div className="AnimationItemDescription">
+        <div className="AnimationItemDescriptionPreview">
+          <img alt="aperçu de séquence" src={image} style={{ height: "100%", width: "150px" }} />
         </div>
-        <div className="AnimationSequenceInfoDescr">
-          {sequence.description}
+        <div className="AnimationDescriptionInfos">
+          <div className="AnimationDescriptionInfosTitle">
+            {sequence.title}
+          </div>
+          <div className="AnimationDescriptionInfosDescription">
+            {sequence.description}
+          </div>
         </div>
       </div>
-
-      <div className="sequence">
-        {sequence.order}
-      </div>
-
-      <div className="sequence" style={{ paddingLeft: "2%" }}>
-        {sequence.duration}
-      </div>
+      <div className="AnimationItemPosition">{sequence.order}</div>
+      <div className="AnimationItemDuration">{sequence.duration}</div>
     </div>
-    <hr style={{ border: "#181818ff 1px solid" }} />
   </>)
 }
 
-function DashboardMainAnimationsTab() {
+function DashboardMainAnimationsTab({setActiveSequence}) {
   const [sequences, setSequences] = useState(null);
-
   useEffect(() => {
-    fetch("/mocks/sequence_pincipal.json")
+    fetch("/mocks/sequence_animation.json")
       .then(response => {
         if (!response.ok) {
           throw new Error("Error");
@@ -49,7 +49,7 @@ function DashboardMainAnimationsTab() {
         return response.json();
       })
       .then(data => {
-        console.log("Fetch succes, update: ", data);
+        console.log("Animation Data succes", data);
         setSequences(data)
       })
       .catch(error => {
@@ -58,18 +58,18 @@ function DashboardMainAnimationsTab() {
   }, []);
 
   return (
-    <>
-      <div className="AnimationTitles">
-        <p>Séquences :</p>
-        <p>Position</p>
-        <p>Durée</p>
+    <div className="AnimationWrapper">
+      <div className="AnimationHeader">
+        <div className="AnimationHeaderDescription">Séquences :</div>
+        <div className="AnimationHeaderPosition">Position</div>
+        <div className="AnimationHeaderDuration">Durée</div>
       </div>
       <div className="AnimationList">
         {(sequences) ? <>
-          {sequences.map((sequenceItem) => <SequenceItem sequence={sequenceItem} /*setActiveSequence={setActiveSequence}*/ />)}
+          {sequences.map((sequenceItem) => <SequenceItem1 sequence={sequenceItem} setActiveSequence={setActiveSequence} />)}
         </> : <>Loading sequences</>}
       </div>
-    </>
+    </div>
   )
 }
 

@@ -11,40 +11,15 @@ function AnimationTable({ tab, tabs, activeTab, index, setActiveTab }) {
 }
 
 
-function DashboardMainNav() {
-
-  const [tabs, setTabs] = useState(
-    [
-      {
-        "id": 0,
-        "label": "Écran principal",
-      },
-      {
-        "id": 1,
-        "label": "Écran indices",
-      },
-      {
-        "id": 2,
-        "label": "Écran input",
-      },
-      {
-        "id": 3,
-        "label": "Dashboard",
-      }
-    ]
-  );
-  const [activeTab, setActiveTab] = useState(tabs[0]);
-
+function DashboardMainNav({tabs, activeTab,setActiveTab}) {
+  
   return (
-    <section>
-      <div className="AnimationTable">
+    <section className="AnimationTable">
         {tabs.map((tab, index) => {
           return (<>
             <AnimationTable tab={tab} index={index} activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
           </>)
         })}
-
-      </div>
     </section>
   )
 

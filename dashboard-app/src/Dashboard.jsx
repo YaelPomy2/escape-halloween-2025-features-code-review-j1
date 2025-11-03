@@ -11,6 +11,7 @@ function Dashboard() {
       <DashboardHeader />
       <div class="wrapper">
         <DashboardSidebar />
+        
         <DashboardMain />
       </div>
     </div>
