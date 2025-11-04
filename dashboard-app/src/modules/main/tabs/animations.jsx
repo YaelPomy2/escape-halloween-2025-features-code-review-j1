@@ -12,8 +12,7 @@ import "./style.css";
 function SequenceItem1({ sequence, setActiveSequence }) {
   // Fonction du click sur la séquence
 
-  function handleClick(e) {
-    e.preventDefault();
+  function handleClick() {
     setActiveSequence(sequence);
   }
 

@@ -6,29 +6,31 @@ import "./storyline.css";
 
 function StorylineLayoutContent({storyLine, i}) {
   // const [storyLineContent, setStoryLineContent] = useState(null);
-
+  console.log(storyLine?.sections[i].animations[0].position,"storyLine2")
   return(<>
-    <div>
-      <div>{storyLine?.sections[i].animations.position}</div>
-      <div>{storyLine?.sections[i].animations.name}</div>
-      <div>{storyLine?.sections[i].animations.durationInSeconds}</div>
-
+    <div className="StoryLineContent">
+      <div>{storyLine?.sections[i].animations[0].position}</div>
+      <div>{storyLine?.sections[i].animations[0].name}</div>
+      <div>{storyLine?.sections[i].animations[0].durationInSeconds}</div>
     </div>
   </>)
 }
 
 function StorylineLayout({storyLine, i}) {
   return(<>
-    <div className="StorylineLayoutContainer">
-      <section className="StorylineLayout StorylineLayout1">
-        <div style={{fontSize:"27px"}}>{storyLine?.sections[i].name}</div>
-        <div>{storyLine?.sections[i].description}</div>
-      </section>
-      <section className="StorylineLayout StorylineLayout2">
-        <div>{storyLine?.sections[i].difficulty}</div>
-      </section>
-    </div>  
-  <StorylineLayoutContent storyLine={storyLine} i={i}/>
+    <div className="StorylineLayoutBox">
+      <div className="StorylineLayoutContainer">
+        <section className="StorylineLayout">
+          <div style={{fontSize:"27px"}}>{storyLine?.sections[i].name}</div>
+          <div>{storyLine?.sections[i].description}</div>
+        </section>
+        <section className="StorylineLayout">
+          <div>{storyLine?.sections[i].difficulty}</div>
+          <div style={{display:"flex", flexFlow:"row nowrap", justifyContent:"center"}}>{storyLine?.sections[i].durationInMinutes}</div>
+        </section>
+      </div>
+    <StorylineLayoutContent storyLine={storyLine} i={i}/>
+  </div>
   </>)
 }
 

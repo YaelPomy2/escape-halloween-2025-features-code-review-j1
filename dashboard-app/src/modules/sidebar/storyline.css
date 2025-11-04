@@ -8,7 +8,8 @@
   margin: 0 auto; 
 
   border-radius: 58px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #0e111e;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.4);
 }
 
 .StoryLineTitle {
@@ -32,11 +33,18 @@
 
   color: aquamarine;
 }
-.StorylineLayout1 {
 
+.StorylineLayoutBox {
+  background-color: #161c31;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 20px;
+  
 }
 
-.StorylineLayout2 {
-
+.StoryLineContent {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 

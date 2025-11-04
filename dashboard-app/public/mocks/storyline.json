@@ -12,6 +12,7 @@
             "animations": [{
                 "id": "animation-1",
                 "name": "Début de l'histoire",
+                "position": 1,
                 "durationInSeconds": 245
             }],
             "clues": []
