@@ -35,7 +35,7 @@ function StorylineLayout({storyLine, i}) {
 }
 
 //Principal
-function DashboardSidebarStoryline({activeTab, setActiveTab}) {
+function DashboardSidebarStoryline() {
   const [storyLine, setStoryLine] = useState(null);
   let i = null;
 
@@ -52,12 +52,12 @@ function DashboardSidebarStoryline({activeTab, setActiveTab}) {
   }, [])
 
   return (<>
-    <div className="StoryLineContainer">
+   {/* <div className="StoryLineContainer">*/}
       <div className="StoryLineTitle">
       Trame de l'histoire
       </div>
         <StorylineLayout storyLine={storyLine} i={0}/>
-    </div>
+  {/*  </div> */}
   </>)
 }
 
