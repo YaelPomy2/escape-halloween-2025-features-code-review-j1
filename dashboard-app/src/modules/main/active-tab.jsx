@@ -22,7 +22,7 @@ function ActiveSequencePreview({sequence}) {
 function DashboardMainActiveTab({activeSequence}) {
   
   return (
-    <section class="MainElementActive">
+    <section className="MainElementActive">
         {(activeSequence) ? <ActiveSequencePreview sequence={activeSequence} /> : <NoActiveSequencePreview />}
     </section>
   )

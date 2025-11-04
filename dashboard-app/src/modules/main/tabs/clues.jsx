@@ -12,9 +12,7 @@ import "./style.css";
 
 function SequenceItem3({ sequence, setActiveSequence }) {
   
-  function handleClick(e) {
-    e.preventDefault();
-    console.log("sequence", sequence)
+  function handleClick() {
     setActiveSequence(sequence);
   }
 

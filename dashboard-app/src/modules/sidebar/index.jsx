@@ -1,10 +1,10 @@
 import DashboardSidebarStoryline from "./storyline"
 
-function DashboardSidebar() {
+function DashboardSidebar({activeTab, setActiveTab}) {
 
   return (
     <aside style={{width:"30%"}}>
-        <DashboardSidebarStoryline />
+        <DashboardSidebarStoryline activeTab={activeTab} setActiveTab={setActiveTab}/>
     </aside>
   )
 }

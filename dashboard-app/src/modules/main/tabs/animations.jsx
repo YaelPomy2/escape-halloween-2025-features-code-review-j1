@@ -49,7 +49,7 @@ function DashboardMainAnimationsTab({setActiveSequence}) {
         return response.json();
       })
       .then(data => {
-        console.log("Animation Data succes", data);
+        console.log("Animation Fetch succes", data);
         setSequences(data)
       })
       .catch(error => {
@@ -66,7 +66,7 @@ function DashboardMainAnimationsTab({setActiveSequence}) {
       </div>
       <div className="AnimationList">
         {(sequences) ? <>
-          {sequences.map((sequenceItem) => <SequenceItem1 sequence={sequenceItem} setActiveSequence={setActiveSequence} />)}
+          {sequences.map((sequenceItem, index) => <SequenceItem1 key={index} sequence={sequenceItem} setActiveSequence={setActiveSequence} />)}
         </> : <>Loading sequences</>}
       </div>
     </div>

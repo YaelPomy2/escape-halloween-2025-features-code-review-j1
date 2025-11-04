@@ -14,30 +14,8 @@ import "./main.css"
 //import d'assets
 
 
-function DashboardMain() {
+function DashboardMain({activeTab, setActiveTab, tabs}) {
   const [activeSequence, setActiveSequence] = useState(null);
-
-  const [tabs, setTabs] = useState(
-    [
-      {
-        "id": 0,
-        "label": "Écran principal",
-      },
-      {
-        "id": 1,
-        "label": "Écran indices",
-      },
-      {
-        "id": 2,
-        "label": "Écran input",
-      },
-      {
-        "id": 3,
-        "label": "Dashboard",
-      }
-    ]
-  );
-  const [activeTab, setActiveTab] = useState(tabs[0]);
 
   function Rest({activeTab, setActiveTab, activeSequence, setActiveSequence, tabs}) {
     return(<>
@@ -54,7 +32,6 @@ function DashboardMain() {
           <DashboardMainAnimationsTab setActiveSequence={setActiveSequence} />
         </main>
       </>)
-    break;
     case 1:
       return(<>
         <main className="MainElementTab">
@@ -62,7 +39,6 @@ function DashboardMain() {
           <DashboardMainCluesTab activeSequence={activeSequence} setActiveSequence={setActiveSequence} />
         </main>
       </>)
-    break;
     case 2:
       return(<>
         <main className="MainElementTab">
@@ -70,7 +46,6 @@ function DashboardMain() {
           <DashboardMainAnswersTab activeSequence={activeSequence} setActiveSequence={setActiveSequence} />
         </main>
       </>)
-    break;
   }
 }
 

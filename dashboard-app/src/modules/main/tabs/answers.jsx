@@ -10,9 +10,7 @@ import "./style.css";
 import image from "../../../../public/mocks/images/sequences/image.png"
 function SequenceItem2({ sequence, setActiveSequence }) {
   
-  function handleClick(e) {
-    e.preventDefault();
-    console.log("sequence", sequence)
+  function handleClick() {
     setActiveSequence(sequence);
   }
 

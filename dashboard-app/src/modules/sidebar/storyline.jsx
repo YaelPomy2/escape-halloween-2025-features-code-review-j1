@@ -4,56 +4,38 @@ import { useState, useEffect } from "react";
 //import styles
 import "./storyline.css";
 
-function StorylineLayoutContent() {
-  const [storyLineContent, setStoryLineContent] = useState(null);
+function StorylineLayoutContent({storyLine, i}) {
+  // const [storyLineContent, setStoryLineContent] = useState(null);
 
   return(<>
-  
+    <div>
+      <div>{storyLine?.sections[i].animations.position}</div>
+      <div>{storyLine?.sections[i].animations.name}</div>
+      <div>{storyLine?.sections[i].animations.durationInSeconds}</div>
+
+    </div>
   </>)
 }
 
-function StorylineLayout({storyLine}) {
-  console.log(storyLine?.title)
-
-  return(<>
-    <div className="StorylineLayoutContainer">
-      <section className="StorylineLayout StorylineLayout1">
-        <div style={{fontSize:"27px"}}>Introduction</div>
-        <div>Introduction à l'histoire de l'escape game</div>
-      </section>
-      <section className="StorylineLayout StorylineLayout2">
-        <div>Histoire</div>
-        <div>5 mins</div>
-      </section>
-    </div>  
-  <StorylineLayoutContent/>
-  </>)
-}
-
-function StorylineLayout1({storyLine}) {
-    useEffect(()=> {
-    console.log(storyLine, "storyLine OFF")
-  }, [storyLine])
-
+function StorylineLayout({storyLine, i}) {
   return(<>
     <div className="StorylineLayoutContainer">
       <section className="StorylineLayout StorylineLayout1">
-        <div style={{fontSize:"27px"}}>Introduction</div>
-        <div>{storyLine}</div>
+        <div style={{fontSize:"27px"}}>{storyLine?.sections[i].name}</div>
+        <div>{storyLine?.sections[i].description}</div>
       </section>
       <section className="StorylineLayout StorylineLayout2">
-        <div>Histoire</div>
-        <div>5 mins</div>
+        <div>{storyLine?.sections[i].difficulty}</div>
       </section>
     </div>  
-  {/*1*/}
-    
-  <StorylineLayoutContent/>
+  <StorylineLayoutContent storyLine={storyLine} i={i}/>
   </>)
 }
+
 //Principal
-function DashboardSidebarStoryline() {
+function DashboardSidebarStoryline({activeTab, setActiveTab}) {
   const [storyLine, setStoryLine] = useState(null);
+  let i = null;
 
   useEffect(()=> {
     fetch("/mocks/storyline.json")
@@ -63,7 +45,7 @@ function DashboardSidebarStoryline() {
         console.log("Storyline fetch succes");
       })
       .catch(error=> {
-        console.log(error("Erreur : ", error))
+        console.log(error("Catch Error : ", error))
       })
   }, [])
 
@@ -72,9 +54,8 @@ function DashboardSidebarStoryline() {
       <div className="StoryLineTitle">
       Trame de l'histoire
       </div>
-        <StorylineLayout storyLine={storyLine} />
+        <StorylineLayout storyLine={storyLine} i={0}/>
     </div>
-    <div > sadsda</div>
   </>)
 }
 

@@ -15,15 +15,15 @@
   margin: 20px;
 }
 
-.StorylineLayoutContainer{
+.StorylineLayoutContainer {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   
   width: 100%;
-  margin: 5%;
-  padding: 20%;
+  padding: 0 5% 0 10%;
+  box-sizing: border-box;
 }
 
 .StorylineLayout {
