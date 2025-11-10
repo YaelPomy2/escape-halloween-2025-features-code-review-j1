@@ -20,18 +20,47 @@
   color: aquamarine;
 }
 
-.StorylineLayoutBox {
+.StoryLineLayoutBox {
   background-color: #161c31;
   border-radius: 14px;
+  
+  width: 100%;
   padding: 20px;
   margin: 20px;
 
-  width: 80%;
+
+
+  box-sizing: border-box;
 }
 
 .StoryLineContent {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
 }
 
+.Absolute{
+  position: absolute;
+  left: 8.8vw;
+}
+
+/*
+Element in the StorylineLayout 
+*/
+.StoryLineName {
+  top: 165px;
+}
+
+.StoryLineDescription {
+
+}
+.StoryLineContentPosition {
+  
+}
+
+.StoryLineContentName {
+  
+}

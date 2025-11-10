@@ -4,60 +4,71 @@ import { useState, useEffect } from "react";
 //import styles
 import "./storyline.css";
 
-function StorylineLayoutContent({storyLine, i}) {
-  // const [storyLineContent, setStoryLineContent] = useState(null);
-  console.log(storyLine?.sections[i].animations[0].position,"storyLine2")
-  return(<>
+function StorylineSectionAnimation({ animation }) {
+
+  return (<>
     <div className="StoryLineContent">
-      <div>{storyLine?.sections[i].animations[0].position}</div>
-      <div>{storyLine?.sections[i].animations[0].name}</div>
-      <div>{storyLine?.sections[i].animations[0].durationInSeconds}</div>
+      <div className="StoryLineContentPosition Absolute">{animation.name}</div>
+      <div>{animation.position}</div>
+      <div>Durée : {animation.durationInSeconds} secondes</div>
     </div>
   </>)
 }
 
-function StorylineLayout({storyLine, i}) {
-  return(<>
-    <div className="StorylineLayoutBox">
-      <div className="StorylineLayoutContainer">
-        <section className="StorylineLayout">
-          <div style={{fontSize:"27px"}}>{storyLine?.sections[i].name}</div>
-          <div>{storyLine?.sections[i].description}</div>
-        </section>
-        <section className="StorylineLayout">
-          <div>{storyLine?.sections[i].difficulty}</div>
-          <div style={{display:"flex", flexFlow:"row nowrap", justifyContent:"center"}}>{storyLine?.sections[i].durationInMinutes}</div>
-        </section>
-      </div>
-    <StorylineLayoutContent storyLine={storyLine} i={i}/>
-  </div>
+
+
+function StorylineSectionHeader({section}) {
+  return (<>
+    <div className="StorylineLayoutContainer">
+      <section className="StorylineLayout">
+        <div className="StoryLineName Absolute" style={{ fontSize: "27px" }}>{section.name}</div>
+        <div className="StoryLineDescription Absolute">{section.description}</div>
+      </section>
+      <section className="StorylineLayout">
+        <div>{section.difficulty}</div>
+        <div style={{ display: "flex", flexFlow: "row nowrap", justifyContent: "center" }}>{section.durationInMinutes}</div>
+      </section>
+    </div>
+  </>)
+}
+
+
+function StorylineSection({ section }) {
+  return (<>
+    <div className="StoryLineLayoutBox">
+      <StorylineSectionHeader section={section} />
+      {section.animations.map((animation) => <StorylineSectionAnimation key={animation.id} animation={animation} />)}
+    </div>
+  </>)
+}
+
+function StorylineLayout({ storyLine }) {
+  return (<>
+    <div className="StoryLineTitle">
+      Trame de l'histoire
+    </div>
+    {storyLine?.sections.map((section) => <StorylineSection key={section.id} section={section} />)}
   </>)
 }
 
 //Principal
-function DashboardSidebarStoryline() {
+function DashboardSidebarStoryline({ isHovered }) {
   const [storyLine, setStoryLine] = useState(null);
-  let i = null;
 
-  useEffect(()=> {
+  useEffect(() => {
     fetch("/mocks/storyline.json")
       .then(res => res.json())
-      .then(data =>{
+      .then(data => {
         setStoryLine(data)
         console.log("Storyline fetch succes");
       })
-      .catch(error=> {
+      .catch(error => {
         console.log(error("Catch Error : ", error))
       })
   }, [])
 
   return (<>
-   {/* <div className="StoryLineContainer">*/}
-      <div className="StoryLineTitle">
-      Trame de l'histoire
-      </div>
-        <StorylineLayout storyLine={storyLine} i={0}/>
-  {/*  </div> */}
+    <StorylineLayout storyLine={storyLine} />
   </>)
 }
 

@@ -40,7 +40,8 @@ aside {
     height: 97%;
 
     margin: 0 20px 0 4%;
-
+    padding: 0 20px;
+    
     box-sizing: border-box;
     border-radius: 58px;
     background-color: #0e111e;
