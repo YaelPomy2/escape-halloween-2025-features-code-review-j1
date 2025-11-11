@@ -8,7 +8,7 @@ function StorylineSectionAnimation({ animation }) {
 
   return (<>
     <div className="StoryLineContent">
-      <div className="StoryLineContentPosition Absolute">{animation.name}</div>
+      <div className="StoryLineContentPosition ">{animation.name}</div>
       <div>{animation.position}</div>
       <div>Durée : {animation.durationInSeconds} secondes</div>
     </div>
@@ -21,8 +21,8 @@ function StorylineSectionHeader({section}) {
   return (<>
     <div className="StorylineLayoutContainer">
       <section className="StorylineLayout">
-        <div className="StoryLineName Absolute" style={{ fontSize: "27px" }}>{section.name}</div>
-        <div className="StoryLineDescription Absolute">{section.description}</div>
+        <div className="StoryLineName " style={{ fontSize: "27px" }}>{section.name}</div>
+        <div className="StoryLineDescription ">{section.description}</div>
       </section>
       <section className="StorylineLayout">
         <div>{section.difficulty}</div>
