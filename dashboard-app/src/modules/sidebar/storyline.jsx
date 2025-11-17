@@ -15,8 +15,6 @@ function StorylineSectionAnimation({ animation }) {
   </>)
 }
 
-
-
 function StorylineSectionHeader({section}) {
   return (<>
     <div className="StorylineLayoutContainer">
@@ -31,7 +29,6 @@ function StorylineSectionHeader({section}) {
     </div>
   </>)
 }
-
 
 function StorylineSection({ section }) {
   return (<>

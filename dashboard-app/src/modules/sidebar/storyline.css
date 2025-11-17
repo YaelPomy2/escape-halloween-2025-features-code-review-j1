@@ -17,6 +17,7 @@
   display: flex;
   flex-flow: column nowrap;
 
+
   color: aquamarine;
 }
 
@@ -26,9 +27,7 @@
   
   width: 100%;
   padding: 20px;
-  margin: 20px;
-
-
+  margin: 20px 0px;
 
   box-sizing: border-box;
 }
@@ -38,8 +37,9 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-
-  padding: 10px;
+  
+  padding: 5px 0px;
+  margin-top: 20px;
 }
 
 
